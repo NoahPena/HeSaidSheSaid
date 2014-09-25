@@ -50,7 +50,14 @@ public class TitleScreen extends Activity implements OnClickListener
 		
 		if(v.getId() == R.id.quitButton)
 		{
+			Intent intent = new Intent(getApplicationContext(), TitleScreen.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("EXIT", true);
+			startActivity(intent);
 			
+			if (getIntent().getBooleanExtra("EXIT", false)) {
+			    finish();
+			}
 		}
 		
 	}
