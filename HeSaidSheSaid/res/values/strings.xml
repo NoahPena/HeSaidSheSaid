@@ -1,5 +1,11 @@
 <resources>
 
     <string name="app_name">HeSaidSheSaid</string>
+    <string name="he_said">He Said  </string>
+    <string name="she_said">She Said</string>
+    <string name="play">Play</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
+    
 
 </resources>
