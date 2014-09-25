@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">HeSaidSheSaid</string>
+    
     <string name="he_said">He Said  </string>
     <string name="she_said">She Said</string>
     <string name="play">Play</string>
@@ -8,6 +9,16 @@
     <string name="exit">Exit</string>
     <string name="he_said_she_said">He Said She Said</string>
     <string name="dumb">Strings are Dumb</string>
+    
+    <string name="victory_conditions">Victory Conditions:</string>
+    <string name="max_rounds">Max Rounds</string>
+    <string name="max_points">Max Points</string>
+    <string name="endless">Endless!</string>
+    <string name="cards">Cards:</string>
+    <string name="use_default">Use Default</string>
+    <string name="only_custom">Only Custom Cards</string>
+    <string name="player_in_lead">Player in lead can create Custom Cards</string>
+    <string name="ok">OK</string>
     
 
 </resources>

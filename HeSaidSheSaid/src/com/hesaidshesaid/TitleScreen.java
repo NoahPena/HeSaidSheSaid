@@ -1,6 +1,7 @@
 package com.hesaidshesaid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,12 +44,14 @@ public class TitleScreen extends Activity implements OnClickListener
 		
 		if(v.getId() == R.id.settingsButton)
 		{
-			
+			Intent intent = new Intent(this, SettingsScreen.class);
+			startActivity(intent);
 		}
 		
 		if(v.getId() == R.id.quitButton)
 		{
 			
 		}
+		
 	}
 }
