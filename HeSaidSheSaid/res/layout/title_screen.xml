@@ -10,7 +10,7 @@
         android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/playButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -20,48 +20,48 @@
             android:width="140dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/quitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="@string/settings"
-            android:textSize="20dp"
-            android:width="140dp" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_alignLeft="@+id/playButton"
+            android:layout_below="@+id/playButton"
+            android:layout_marginTop="86dp"
             android:text="@string/exit"
             android:textSize="20dp"
             android:width="140dp" />
 
-        <TextView
-            android:id="@+id/textView1"
+        <Button
+            android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/button1"
-            android:layout_marginTop="46dp"
-            android:text="@string/he_said"
+            android:layout_alignLeft="@+id/quitButton"
+            android:layout_below="@+id/playButton"
+            android:layout_marginTop="20dp"
+            android:text="@string/settings"
+            android:textSize="20dp"
+            android:width="140dp" />
+
+        <TextView
+            android:id="@+id/sheSaidText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/playButton"
+            android:layout_alignLeft="@+id/playButton"
+            android:layout_marginBottom="70dp"
+            android:text="@string/she_said"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="40dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/heSaidText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView1"
-            android:layout_below="@+id/textView1"
-            android:layout_marginTop="28dp"
-            android:text="@string/she_said"
+            android:layout_above="@+id/sheSaidText"
+            android:layout_alignLeft="@+id/sheSaidText"
+            android:text="@string/he_said"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="40dp" />
+
     </RelativeLayout>
 
 </LinearLayout>
