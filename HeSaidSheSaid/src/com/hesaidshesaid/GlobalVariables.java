@@ -21,5 +21,7 @@ public class GlobalVariables {
 	
 	public static ArrayList<String> players = new ArrayList<String>();
 	
+	
+	
 
 }
