@@ -20,7 +20,7 @@
 
         <Spinner
             android:id="@+id/spinnerPlayerNumber"
-            android:layout_width="100dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/textView1"
             android:layout_centerHorizontal="true"
@@ -29,12 +29,21 @@
             android:prompt="@string/how_many_players" />
 
         <Button
+            android:id="@+id/buttonBackHowManyPlayers"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonOKHowManyPlayers"
+            android:layout_alignBottom="@+id/buttonOKHowManyPlayers"
+            android:layout_toLeftOf="@+id/buttonOKHowManyPlayers"
+            android:text="@string/back" />
+
+        <Button
             android:id="@+id/buttonOKHowManyPlayers"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="80dp"
+            android:layout_alignRight="@+id/spinnerPlayerNumber"
+            android:layout_marginBottom="82dp"
             android:text="@string/ok" />
 
     </RelativeLayout>

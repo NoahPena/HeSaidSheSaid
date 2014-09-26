@@ -19,6 +19,8 @@
     <string name="only_custom">Only Custom Cards</string>
     <string name="player_in_lead">Player in lead can create Custom Cards</string>
     <string name="ok">OK</string>
+    <string name="max_points_hint">How Many Points</string>
+    <string name="max_rounds_hint">How Many Rounds</string>
     
     <string name="how_many_players">How Many Players?</string>
     <string-array name="player_number_arrays">
@@ -38,5 +40,6 @@
         <item>15 Players</item>
         <item>16 Players</item>
     </string-array>
+    <string name="back">Back</string>
 
 </resources>

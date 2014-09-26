@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ public class TitleScreen extends Activity implements OnClickListener
 	public void onCreate(Bundle savedInstance)
 	{
 		super.onCreate(savedInstance);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.title_screen);
 		
 		playButton = (Button)findViewById(R.id.playButton);
@@ -50,10 +52,10 @@ public class TitleScreen extends Activity implements OnClickListener
 		
 		if(v.getId() == R.id.quitButton)
 		{
-			Intent intent = new Intent(getApplicationContext(), TitleScreen.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			intent.putExtra("EXIT", true);
-			startActivity(intent);
+			//Intent intent = new Intent(getApplicationContext(), TitleScreen.class);
+			//intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			//intent.putExtra("EXIT", true);
+			//startActivity(intent);
 			
 			finish();
 		}

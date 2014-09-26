@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -21,11 +23,15 @@ public class SettingsScreen extends Activity implements OnClickListener {
 	RadioButton onlyCustomRadio;
 	RadioButton playerInLeadRadio;
 	
+	EditText maxRoundsEdit;
+	EditText maxPointsEdit;
+	
 	Button okSettingsButton;
 	
 	public void onCreate(Bundle savedInstance)
 	{
 		super.onCreate(savedInstance);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.settings_screen);
 		
 		victoryRadioGroup = (RadioGroup)findViewById(R.id.victoryRadioGroup);
@@ -38,8 +44,22 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		onlyCustomRadio = (RadioButton)findViewById(R.id.radioOnlyCustom);
 		playerInLeadRadio = (RadioButton)findViewById(R.id.radioPlayerInLead);
 		
+		maxRoundsEdit = (EditText)findViewById(R.id.editTextMaxRounds);
+		maxPointsEdit = (EditText)findViewById(R.id.editTextMaxPoints);
+		
 		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);
 		
+            maxPointsEdit.setFocusable(false);
+            maxPointsEdit.setFocusableInTouchMode(false);
+            maxPointsEdit.setClickable(false);
+     
+            maxRoundsEdit.setFocusable(true);
+            maxRoundsEdit.setFocusableInTouchMode(true);
+            maxRoundsEdit.setClickable(true);
+            
+		maxRoundsRadio.setOnClickListener(this);
+		maxPointsRadio.setOnClickListener(this);
+		endlessRadio.setOnClickListener(this);
 		victoryRadioGroup.setOnClickListener(this);
 		okSettingsButton.setOnClickListener(this);
 		
@@ -49,11 +69,79 @@ public class SettingsScreen extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		
-		if(v.getId() == R.id.victoryRadioGroup)
+		if(v.getId() == R.id.radioMaxRounds)
 		{
-			
+			maxRoundsEdit.setFocusable(true);
+            maxRoundsEdit.setFocusableInTouchMode(true);
+            maxRoundsEdit.setClickable(true);
+            
+            maxPointsEdit.setFocusable(false);
+            maxPointsEdit.setFocusableInTouchMode(false);
+            maxPointsEdit.setClickable(false);
 		}
 		
+		if(v.getId() == R.id.radioMaxPoints)
+		{
+			maxPointsEdit.setFocusable(true);
+            maxPointsEdit.setFocusableInTouchMode(true);
+            maxPointsEdit.setClickable(true);
+            
+            maxRoundsEdit.setFocusable(false);
+            maxRoundsEdit.setFocusableInTouchMode(false);
+            maxRoundsEdit.setClickable(false);
+		}
+		
+		if(v.getId() == R.id.radioEndless)
+		{
+			maxRoundsEdit.setFocusable(false);
+            maxRoundsEdit.setFocusableInTouchMode(false);
+            maxRoundsEdit.setClickable(false);
+            
+            maxPointsEdit.setFocusable(false);
+            maxPointsEdit.setFocusableInTouchMode(false);
+            maxPointsEdit.setClickable(false);
+		}
+	/*	
+		if(v.getId() == R.id.victoryRadioGroup)
+		{
+			switch(victoryRadioGroup.getCheckedRadioButtonId())
+			{
+			case R.id.radioMaxRounds:
+				maxRoundsEdit.setFocusable(true);
+	            maxRoundsEdit.setFocusableInTouchMode(true);
+	            maxRoundsEdit.setClickable(true);
+	            
+	            maxPointsEdit.setFocusable(false);
+	            maxPointsEdit.setFocusableInTouchMode(false);
+	            maxPointsEdit.setClickable(false);
+	            
+				break;
+				
+			case R.id.radioMaxPoints:
+				maxPointsEdit.setFocusable(true);
+	            maxPointsEdit.setFocusableInTouchMode(true);
+	            maxPointsEdit.setClickable(true);
+	            
+	            maxRoundsEdit.setFocusable(false);
+	            maxRoundsEdit.setFocusableInTouchMode(false);
+	            maxRoundsEdit.setClickable(false);
+	            
+				break;
+				
+			case R.id.radioEndless:
+				
+				maxRoundsEdit.setFocusable(false);
+	            maxRoundsEdit.setFocusableInTouchMode(false);
+	            maxRoundsEdit.setClickable(false);
+	            
+	            maxPointsEdit.setFocusable(false);
+	            maxPointsEdit.setFocusableInTouchMode(false);
+	            maxPointsEdit.setClickable(false);
+				
+				break;
+			}
+		}
+		*/
 		if(v.getId() == R.id.buttonOKSettings)
 		{
 			//Update Global Variables
@@ -61,30 +149,32 @@ public class SettingsScreen extends Activity implements OnClickListener {
 			switch(victoryRadioGroup.getCheckedRadioButtonId())
 			{
 			case R.id.radioMaxRounds:
-				
+				GlobalVariables.gameType = 0;
+				GlobalVariables.maxRounds = Integer.parseInt(maxRoundsEdit.getText().toString());
 				break;
 				
 			case R.id.radioMaxPoints:
-				
+				GlobalVariables.gameType = 1;
+				GlobalVariables.maxPoints = Integer.parseInt(maxPointsEdit.getText().toString());
 				break;
 				
 			case R.id.radioEndless:
-				
+				GlobalVariables.gameType = 2;
 				break;
 			}
 			
 			switch(cardsRadioGroup.getCheckedRadioButtonId())
 			{
 			case R.id.radioUseDefault:
-				
+				GlobalVariables.cardType = 0;
 				break;
 				
 			case R.id.radioOnlyCustom:
-				
+				GlobalVariables.cardType = 1;
 				break;
 				
 			case R.id.radioPlayerInLead:
-				
+				GlobalVariables.cardType = 2;
 				break;
 			}
 			
