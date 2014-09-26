@@ -60,6 +60,7 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 		}
 		
 	}
+	//
 	
 	 public class MyAdapter extends BaseAdapter {
 	        private LayoutInflater mInflater;
