@@ -20,5 +20,23 @@
     <string name="player_in_lead">Player in lead can create Custom Cards</string>
     <string name="ok">OK</string>
     
+    <string name="how_many_players">How Many Players?</string>
+    <string-array name="player_number_arrays">
+        <item>2 Players</item>
+        <item>3 Players</item>
+        <item>4 Players</item>
+        <item>5 Players</item>
+        <item>6 Players</item>
+        <item>7 Players</item>
+        <item>8 Players</item>
+        <item>9 Players</item>
+        <item>10 Players</item>
+        <item>11 Players</item>
+        <item>12 Players</item>
+        <item>13 Players</item>
+        <item>14 Players</item>
+        <item>15 Players</item>
+        <item>16 Players</item>
+    </string-array>
 
 </resources>

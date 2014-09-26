@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:layout_weight="0.95" >
 
         <TextView
             android:id="@+id/textView1"
@@ -14,111 +15,81 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="41dp"
             android:text="@string/victory_conditions"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <RadioGroup
-        android:id="@+id/radioVictory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+            android:id="@+id/victoryRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1" >
+
+            <RadioButton
+                android:id="@+id/radioMaxRounds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/max_rounds" />
+
+            <RadioButton
+                android:id="@+id/radioMaxPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max_points" />
+
+            <RadioButton
+                android:id="@+id/radioEndless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/endless" />
         </RadioGroup>
-
-        <RadioGroup
-        android:id="@+id/radioCards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-        
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/okSettingsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="27dp"
-            android:text="@string/ok" />
-
-        <RadioButton
-            android:id="@+id/playerInLead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/okSettingsButton"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="28dp"
-            android:text="@string/player_in_lead" />
-
-        <RadioButton
-            android:id="@+id/onlyCustom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/playerInLead"
-            android:layout_alignParentLeft="true"
-            android:text="@string/only_custom" />
-
-        <RadioButton
-            android:id="@+id/useDefault"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/onlyCustom"
-            android:layout_alignParentLeft="true"
-            android:text="@string/use_default" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/useDefault"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:text="@string/cards"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <RadioButton
-            android:id="@+id/maxRounds"
+        <RadioGroup
+            android:id="@+id/cardsRadioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textView1"
-            android:text="@string/max_rounds" />
+            android:layout_below="@+id/textView2" >
 
-        <RadioButton
-            android:id="@+id/maxPoints"
-            android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/radioUseDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/use_default" />
+
+            <RadioButton
+                android:id="@+id/radioOnlyCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/only_custom" />
+
+            <RadioButton
+                android:id="@+id/radioPlayerInLead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/player_in_lead" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonOKSettings"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/maxRounds"
-            android:text="@string/max_points" />
-
-        <RadioButton
-            android:id="@+id/endless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/maxPoints"
-            android:text="@string/endless" />
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/maxPoints"
-            android:layout_alignBottom="@+id/maxPoints"
-            android:layout_toRightOf="@+id/textView1"
-            android:ems="10"
-            android:inputType="number" >
-        </EditText>
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/editText1"
-            android:layout_alignLeft="@+id/editText1"
-            android:ems="10"
-            android:inputType="number" >
-
-        </EditText>
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:text="@string/ok" />
 
     </RelativeLayout>
 

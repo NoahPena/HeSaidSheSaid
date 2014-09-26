@@ -38,7 +38,8 @@ public class TitleScreen extends Activity implements OnClickListener
 		
 		if(v.getId() == R.id.playButton)
 		{
-			
+			Intent intent = new Intent(this, HowManyPlayersScreen.class);
+			startActivity(intent);
 		}
 		
 		if(v.getId() == R.id.settingsButton)
@@ -54,9 +55,7 @@ public class TitleScreen extends Activity implements OnClickListener
 			intent.putExtra("EXIT", true);
 			startActivity(intent);
 			
-			if (getIntent().getBooleanExtra("EXIT", false)) {
-			    finish();
-			}
+			finish();
 		}
 		
 	}
