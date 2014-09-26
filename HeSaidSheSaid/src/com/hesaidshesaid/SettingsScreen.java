@@ -11,22 +11,34 @@ import android.widget.RadioGroup;
 
 public class SettingsScreen extends Activity implements OnClickListener {
 	
-	RadioGroup  victoryRadioGroup = (RadioGroup)findViewById(R.id.radioVictory);
-	RadioButton maxRoundsRadio = (RadioButton)findViewById(R.id.maxRounds);
-	RadioButton maxPointsRadio = (RadioButton)findViewById(R.id.maxPoints);
-	RadioButton endlessRadio = (RadioButton)findViewById(R.id.endless);
+	RadioGroup  victoryRadioGroup;
+	RadioButton maxRoundsRadio;
+	RadioButton maxPointsRadio;
+	RadioButton endlessRadio;
 	
-	RadioGroup  cardsRadioGroup = (RadioGroup)findViewById(R.id.radioCards);
-	RadioButton useDefaultRadio = (RadioButton)findViewById(R.id.useDefault);
-	RadioButton onlyCustomRadio = (RadioButton)findViewById(R.id.onlyCustom);
-	RadioButton playerInLeadRadio = (RadioButton)findViewById(R.id.playerInLead);
+	RadioGroup  cardsRadioGroup;
+	RadioButton useDefaultRadio;
+	RadioButton onlyCustomRadio;
+	RadioButton playerInLeadRadio;
 	
-	Button okSettingsButton = (Button)findViewById(R.id.okSettingsButton);
+	Button okSettingsButton;
 	
 	public void onCreate(Bundle savedInstance)
 	{
 		super.onCreate(savedInstance);
 		setContentView(R.layout.settings_screen);
+		
+		victoryRadioGroup = (RadioGroup)findViewById(R.id.radioVictory);
+		maxRoundsRadio = (RadioButton)findViewById(R.id.maxRounds);
+		maxPointsRadio = (RadioButton)findViewById(R.id.maxPoints);
+		endlessRadio = (RadioButton)findViewById(R.id.endless);
+		
+		cardsRadioGroup = (RadioGroup)findViewById(R.id.radioCards);
+		useDefaultRadio = (RadioButton)findViewById(R.id.useDefault);
+		onlyCustomRadio = (RadioButton)findViewById(R.id.onlyCustom);
+		playerInLeadRadio = (RadioButton)findViewById(R.id.playerInLead);
+		
+		okSettingsButton = (Button)findViewById(R.id.okSettingsButton);
 		
 		okSettingsButton.setOnClickListener(this);
 		

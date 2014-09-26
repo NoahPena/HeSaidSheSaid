@@ -11,12 +11,9 @@ import android.widget.TextView;
 public class TitleScreen extends Activity implements OnClickListener
 {
 
-	Button playButton = (Button)findViewById(R.id.playButton);
-	Button settingsButton = (Button)findViewById(R.id.settingsButton);
-	Button quitButton = (Button)findViewById(R.id.quitButton);
-	
-	TextView heSaidText = (TextView)findViewById(R.id.heSaidText);
-	TextView sheSaidText = (TextView)findViewById(R.id.sheSaidText);
+	Button playButton;
+	Button settingsButton;
+	Button quitButton;
 	
 	
 	public void onCreate(Bundle savedInstance)
@@ -24,7 +21,9 @@ public class TitleScreen extends Activity implements OnClickListener
 		super.onCreate(savedInstance);
 		setContentView(R.layout.title_screen);
 		
-		
+		playButton = (Button)findViewById(R.id.playButton);
+		settingsButton = (Button)findViewById(R.id.settingsButton);
+		quitButton = (Button)findViewById(R.id.quitButton);
 		
 		
 		playButton.setOnClickListener(this);
