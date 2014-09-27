@@ -9,7 +9,7 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -22,7 +22,7 @@
             android:id="@+id/spinnerPlayerNumber"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/textViewPlayer"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="87dp"
             android:entries="@array/player_number_arrays"

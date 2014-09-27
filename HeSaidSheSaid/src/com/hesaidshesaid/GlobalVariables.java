@@ -19,9 +19,9 @@ public class GlobalVariables {
 	
 	public static int amountOfPlayers = 2;
 	
-	public static ArrayList<String> players = new ArrayList<String>();
+	public static ArrayList<Player> players = new ArrayList<Player>();
 	
-	
+	public static Player host;
 	
 
 }

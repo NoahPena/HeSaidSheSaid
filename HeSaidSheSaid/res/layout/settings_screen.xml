@@ -10,7 +10,7 @@
         android:layout_weight="0.95" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textView1" >
+            android:layout_below="@+id/textViewPlayer" >
 
             <RadioButton
                 android:id="@+id/radioMaxRounds"

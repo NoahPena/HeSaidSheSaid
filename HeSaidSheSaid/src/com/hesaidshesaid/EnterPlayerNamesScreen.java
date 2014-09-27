@@ -34,7 +34,7 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 		
 		playerNamesListView = (ListView) findViewById(R.id.listViewPlayerNames);
         playerNamesListView.setItemsCanFocus(true);
-        playerNameAdapter = new MyAdapter();
+        playerNameAdapter = new MyAdapter(this);
         playerNamesListView.setAdapter(playerNameAdapter);
         
         okEnterPlayerNamesButton = (Button)findViewById(R.id.buttonOkEnterPlayerNames);
@@ -56,74 +56,21 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 		
 		if(v.getId() == R.id.buttonOkEnterPlayerNames)
 		{
+			for(int i = 0; i < GlobalVariables.amountOfPlayers; i++)
+			{
+				GlobalVariables.players.add(new Player(playerNameAdapter.getItem(i)));
+				
+			}
+			
+			Intent intent = new Intent(this, PickHostScreen.class);
+			startActivity(intent);
+	
 			
 		}
 		
 	}
 	//
 	
-	 public class MyAdapter extends BaseAdapter {
-	        private LayoutInflater mInflater;
-	        public ArrayList<ListItem> myItems = new ArrayList<ListItem>();
-	 
-	        public MyAdapter() {
-	            mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	            for (int i = 0; i < GlobalVariables.amountOfPlayers; i++) {
-	                ListItem listItem = new ListItem();
-	                listItem.caption = "Player " + (i + 1);
-	                myItems.add(listItem);
-	            }
-	            notifyDataSetChanged();
-	        }
-	 
-	        public int getCount() {
-	            return myItems.size();
-	        }
-	 
-	        public Object getItem(int position) {
-	            return position;
-	        }
-	 
-	        public long getItemId(int position) {
-	            return position;
-	        }
-	 
-	        public View getView(int position, View convertView, ViewGroup parent) {
-	            ViewHolder holder;
-	            if (convertView == null) {
-	                holder = new ViewHolder();
-	                convertView = mInflater.inflate(R.layout.item, null);
-	                holder.caption = (EditText) convertView
-	                        .findViewById(R.id.ItemCaption);
-	                convertView.setTag(holder);
-	            } else {
-	                holder = (ViewHolder) convertView.getTag();
-	            }
-	            //Fill EditText with the value you have in data source
-	            holder.caption.setText(myItems.get(position).caption);
-	            holder.caption.setId(position);
-	 
-	            //we need to update adapter once we finish with editing
-	            holder.caption.setOnFocusChangeListener(new OnFocusChangeListener() {
-	                public void onFocusChange(View v, boolean hasFocus) {
-	                    if (!hasFocus){
-	                        final int position = v.getId();
-	                        final EditText Caption = (EditText) v;
-	                        myItems.get(position).caption = Caption.getText().toString();
-	                    }
-	                }
-	            });
-	 
-	            return convertView;
-	        }
-	    }
-	 
-	 class ViewHolder {
-	        EditText caption;
-	    }
-	 
-	    class ListItem {
-	        String caption;
-	    }
+	
 
 }
