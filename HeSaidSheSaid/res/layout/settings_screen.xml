@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/textViewPlayer" >
 
             <RadioButton
@@ -44,42 +45,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/endless" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/cards"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <RadioGroup
-            android:id="@+id/cardsRadioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textView2" >
-
-            <RadioButton
-                android:id="@+id/radioUseDefault"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/use_default" />
-
-            <RadioButton
-                android:id="@+id/radioOnlyCustom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/only_custom" />
-
-            <RadioButton
-                android:id="@+id/radioPlayerInLead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player_in_lead" />
         </RadioGroup>
 
         <Button
@@ -114,6 +79,45 @@
             android:ems="10"
             android:hint="@string/max_points_hint"
             android:inputType="number" />
+
+        <RadioGroup
+            android:id="@+id/cardsRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonOKSettings"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp" >
+
+            <RadioButton
+                android:id="@+id/radioUseDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/use_default" />
+
+            <RadioButton
+                android:id="@+id/radioOnlyCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/only_custom" />
+
+            <RadioButton
+                android:id="@+id/radioPlayerInLead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/player_in_lead" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/cardsRadioGroup"
+            android:layout_alignParentLeft="true"
+            android:text="@string/cards"
+            android:layout_marginTop="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
 
