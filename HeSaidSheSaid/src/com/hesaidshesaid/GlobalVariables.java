@@ -15,7 +15,7 @@ public class GlobalVariables {
 	public static int cardType = 0;
 	
 	public static int maxRounds = 20;
-	public static int maxPoints = 20;
+	public static int maxPoints = 15;
 	
 	public static int amountOfPlayers = 2;
 	

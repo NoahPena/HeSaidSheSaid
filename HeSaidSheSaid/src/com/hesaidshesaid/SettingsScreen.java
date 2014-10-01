@@ -49,6 +49,9 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		
 		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);
 		
+			maxPointsEdit.setHint("Default is 15");
+			maxRoundsEdit.setHint("Default is 20");
+		
             maxPointsEdit.setFocusable(false);
             maxPointsEdit.setFocusableInTouchMode(false);
             maxPointsEdit.setClickable(false);
@@ -101,47 +104,7 @@ public class SettingsScreen extends Activity implements OnClickListener {
             maxPointsEdit.setFocusableInTouchMode(false);
             maxPointsEdit.setClickable(false);
 		}
-	/*	
-		if(v.getId() == R.id.victoryRadioGroup)
-		{
-			switch(victoryRadioGroup.getCheckedRadioButtonId())
-			{
-			case R.id.radioMaxRounds:
-				maxRoundsEdit.setFocusable(true);
-	            maxRoundsEdit.setFocusableInTouchMode(true);
-	            maxRoundsEdit.setClickable(true);
-	            
-	            maxPointsEdit.setFocusable(false);
-	            maxPointsEdit.setFocusableInTouchMode(false);
-	            maxPointsEdit.setClickable(false);
-	            
-				break;
-				
-			case R.id.radioMaxPoints:
-				maxPointsEdit.setFocusable(true);
-	            maxPointsEdit.setFocusableInTouchMode(true);
-	            maxPointsEdit.setClickable(true);
-	            
-	            maxRoundsEdit.setFocusable(false);
-	            maxRoundsEdit.setFocusableInTouchMode(false);
-	            maxRoundsEdit.setClickable(false);
-	            
-				break;
-				
-			case R.id.radioEndless:
-				
-				maxRoundsEdit.setFocusable(false);
-	            maxRoundsEdit.setFocusableInTouchMode(false);
-	            maxRoundsEdit.setClickable(false);
-	            
-	            maxPointsEdit.setFocusable(false);
-	            maxPointsEdit.setFocusableInTouchMode(false);
-	            maxPointsEdit.setClickable(false);
-				
-				break;
-			}
-		}
-		*/
+	
 		if(v.getId() == R.id.buttonOKSettings)
 		{
 			//Update Global Variables
@@ -150,12 +113,26 @@ public class SettingsScreen extends Activity implements OnClickListener {
 			{
 			case R.id.radioMaxRounds:
 				GlobalVariables.gameType = 0;
+				
+				try
+				{
 				GlobalVariables.maxRounds = Integer.parseInt(maxRoundsEdit.getText().toString());
+				} catch(Exception e)
+				{
+					GlobalVariables.maxRounds = 20;
+				}
 				break;
 				
 			case R.id.radioMaxPoints:
 				GlobalVariables.gameType = 1;
+				
+				try
+				{
 				GlobalVariables.maxPoints = Integer.parseInt(maxPointsEdit.getText().toString());
+				} catch(Exception e)
+				{
+					GlobalVariables.maxPoints = 15;
+				}
 				break;
 				
 			case R.id.radioEndless:
