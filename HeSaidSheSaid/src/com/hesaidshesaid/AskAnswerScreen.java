@@ -41,7 +41,7 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 		if(GlobalVariables.currentCounter == -1)
 		{
 			Random random = new Random();
-			GlobalVariables.currentCounter = random.nextInt();
+			GlobalVariables.currentCounter = random.nextInt(GlobalVariables.playersAnswering.size());
 		}		
 		
 		textViewPlayerNameAskAnswer.setText(GlobalVariables.playersAnswering.get(GlobalVariables.currentCounter).getPlayerName());
@@ -57,8 +57,25 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		if(v.getId() == R.id.buttonOKAskAnswer)
 		{
-			GlobalVariables.playersAnswering.get(GlobalVariables.currentCounter).addAnswer(editTextAskAnswer.getText().toString());
-			//do something
+			if(GlobalVariables.playersAnswering.size() != 0)
+			{
+				GlobalVariables.playersAnswering.get(GlobalVariables.currentCounter).addAnswer(editTextAskAnswer.getText().toString());
+				GlobalVariables.playersAnswering.remove(GlobalVariables.currentCounter);
+			
+				if(GlobalVariables.playersAnswering.size() == 0)
+				{
+					//		End of Round
+				} else {
+			
+				Random random = new Random();
+				GlobalVariables.currentCounter = random.nextInt(GlobalVariables.playersAnswering.size());
+			
+				textViewPlayerNameAskAnswer.setText(GlobalVariables.playersAnswering.get(GlobalVariables.currentCounter).getPlayerName());
+			
+				editTextAskAnswer.setText("");
+				//do something
+				}
+			}
 		}
 		
 		if(v.getId() == R.id.buttonQuitAskAnswer)

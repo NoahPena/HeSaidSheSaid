@@ -31,5 +31,7 @@ public class GlobalVariables {
 	
 	public static int currentCounter = -1;
 	
+	public static int currentRound = 0;
+	
 
 }

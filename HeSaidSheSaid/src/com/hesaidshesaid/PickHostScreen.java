@@ -31,6 +31,7 @@ public class PickHostScreen extends Activity implements OnClickListener {
 		Random randomGenerator = new Random();
 		int randomInt = randomGenerator.nextInt(GlobalVariables.amountOfPlayers);
 		GlobalVariables.host = GlobalVariables.players.get(randomInt);
+		GlobalVariables.players.get(randomInt).setHost(true);
 		playerTextView.setText(GlobalVariables.host.getPlayerName());
 		
 		for(int i = 0; i < GlobalVariables.players.size(); i++)
