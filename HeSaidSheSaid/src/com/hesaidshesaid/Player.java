@@ -3,14 +3,23 @@ package com.hesaidshesaid;
 public class Player {
 
 	private String playerName;
-	private int playerScore;
-	private int playerRank;
-	private boolean isHost;
+	private int playerScore = 0;
+	private int playerRank = 0;
+	private boolean isHost = false;
+	private String answer;
+	private boolean hasAnswered = false;
 	
 	
 	public Player(String name)
 	{
 		playerName = name;
+	}
+	
+	public void resetPlayer()
+	{
+		isHost = false;
+		answer = "";
+		hasAnswered = false;
 	}
 	
 	public String getPlayerName()
@@ -56,5 +65,16 @@ public class Player {
 	public void addPoint()
 	{
 		playerScore++;
+	}
+	
+	public void addAnswer(String maybe)
+	{
+		answer = maybe;
+		hasAnswered = true;
+	}
+	
+	public String getAnswer()
+	{
+		return answer;
 	}
 }

@@ -27,6 +27,12 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".PickHostScreen"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".AskQuestionScreen"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".DisplayQuestionScreen"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".AskAnswerScreen"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

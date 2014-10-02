@@ -45,5 +45,14 @@
     
     <string name="cool_person">Noah</string>
     <string name="is_host">is host!</string>
+    
+    <string name="what_question">What\'s Your Question?</string>
+    <string name="quit">Quit</string>
+    
+    <string name="question">Question:</string>
+    
+    <string name="what_answer">What\'s Your Answer?</string>
+    <string name="score_board">Score Board</string>
+    <string name="read_question">Read Question</string>
 
 </resources>

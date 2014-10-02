@@ -21,7 +21,15 @@ public class GlobalVariables {
 	
 	public static ArrayList<Player> players = new ArrayList<Player>();
 	
+	public static ArrayList<Player> playersAnswering = new ArrayList<Player>();
+	
 	public static Player host;
+	
+	public static String currentQuestion;
+	
+	public static ArrayList<String> questionBank = new ArrayList<String>();
+	
+	public static int currentCounter = -1;
 	
 
 }

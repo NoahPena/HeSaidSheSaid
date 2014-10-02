@@ -1,5 +1,12 @@
 package com.hesaidshesaid;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class HowManyPlayersScreen extends Activity implements OnClickListener {
 	
@@ -28,6 +36,20 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 		
 		okHowManyPlayersButton.setOnClickListener(this);
 		backHowManyPlayersButton.setOnClickListener(this);
+		
+		//populate questionBank
+		if(GlobalVariables.cardType != 1)
+		{
+			try {
+				populateQuestionBank();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
@@ -46,6 +68,22 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 			Intent intent = new Intent(this, TitleScreen.class);
 			startActivity(intent);
 		}
+	}
+	
+	public void populateQuestionBank() throws FileNotFoundException, IOException
+	{
+		//InputStream inputStream = HowManyPlayersScreen.class.getResourceAsStream("Questions.txt");
+		InputStream is = getAssets().open("Questions.txt");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		String line = null;
+		while ((line = reader.readLine()) != null) 
+		{
+			GlobalVariables.questionBank.add(line);
+		}
+		
+		reader.close();
+		
+		//Toast.makeText(HowManyPlayersScreen.this, "Size: " + GlobalVariables.questionBank.size(), Toast.LENGTH_LONG).show();
 	}
 
 }
