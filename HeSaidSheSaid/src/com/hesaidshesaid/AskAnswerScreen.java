@@ -64,7 +64,8 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 			
 				if(GlobalVariables.playersAnswering.size() == 0)
 				{
-					//		End of Round
+					Intent intent = new Intent(this, ChooseAnswerScreen.class);
+					startActivity(intent);
 				} else {
 			
 				Random random = new Random();
@@ -75,6 +76,9 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 				editTextAskAnswer.setText("");
 				//do something
 				}
+			} else {
+				Intent intent = new Intent(this, ChooseAnswerScreen.class);
+				startActivity(intent);
 			}
 		}
 		

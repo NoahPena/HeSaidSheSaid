@@ -59,4 +59,6 @@
     
     <string name="choose">Chose the Best Answer!</string>
     
+    <string name="win_round">Wins this Round!</string>
+    <string name="next_round">Next Round</string>
 </resources>
