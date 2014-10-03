@@ -56,4 +56,7 @@
     <string name="read_question">Read Question</string>
 
     <string name="scores">Scores</string>
+    
+    <string name="choose">Chose the Best Answer!</string>
+    
 </resources>

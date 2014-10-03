@@ -1,9 +1,13 @@
 package com.hesaidshesaid;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,8 +32,6 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 		listViewScoreBoard = (ListView)findViewById(R.id.listViewScoreBoard);
 		
 		buttonOKScoreBoard = (Button)findViewById(R.id.buttonOKScoreBoard);
-		
-		System.out.println("We got here");
 	
 		
 		Collections.sort(GlobalVariables.players, new Comparator<Player>() {
@@ -38,7 +40,6 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 			}
 		});
 		
-		System.out.println("We Got farther!");
 	
 		String[] array = new String[GlobalVariables.players.size()];
 		
@@ -47,15 +48,19 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 			array[i] = GlobalVariables.players.get(i).getPlayerName() + " has a score of " + GlobalVariables.players.get(i).getPlayerScore();
 		}
 		
-		System.out.println("Even farther!");
+		final ArrayList<String> list = new ArrayList<String>();
+	    for (int i = 0; i < array.length; ++i) {
+	      list.add(array[i]);
+	    }
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.scores, R.id.listViewScoreBoard, array);
 		
-		System.out.println("WE got this far!!");
+		final StableArrayAdapter adapter = new StableArrayAdapter(this,
+		        R.layout.scores, list);
 		
 		listViewScoreBoard.setAdapter(adapter);
 		
 		buttonOKScoreBoard.setOnClickListener(this);
+		
 	}
 
 	@Override
@@ -67,5 +72,30 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 			startActivity(intent);
 		}
 	}
+	
+	 private class StableArrayAdapter extends ArrayAdapter<String> {
+
+		    HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
+
+		    public StableArrayAdapter(Context context, int textViewResourceId,
+		        List<String> objects) {
+		      super(context, textViewResourceId, objects);
+		      for (int i = 0; i < objects.size(); ++i) {
+		        mIdMap.put(objects.get(i), i);
+		      }
+		    }
+
+		    @Override
+		    public long getItemId(int position) {
+		      String item = getItem(position);
+		      return mIdMap.get(item);
+		    }
+
+		    @Override
+		    public boolean hasStableIds() {
+		      return true;
+		    }
+
+		  }
 	
 }

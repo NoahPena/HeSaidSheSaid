@@ -33,5 +33,9 @@ public class GlobalVariables {
 	
 	public static int currentRound = 0;
 	
+	public static String bestAnswer = "";
+	
+	public static Player currentWinner;
+	
 
 }

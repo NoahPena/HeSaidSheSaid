@@ -6,15 +6,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 
-public class DisplayAnswersScreen extends Activity implements OnClickListener {
-
+public class DisplayRoundWinnerScreen extends Activity implements OnClickListener {
+	
 	public void onCreate(Bundle instanceBundle)
 	{
 		super.onCreate(instanceBundle);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.display_answer_screen);
-		
-		
+		setContentView(R.layout.display_round_winner_screen);
 	}
 
 	@Override
@@ -22,4 +20,5 @@ public class DisplayAnswersScreen extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		
 	}
+
 }

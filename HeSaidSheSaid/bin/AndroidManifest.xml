@@ -35,6 +35,10 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".ScoreBoardScreen"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".ChooseAnswerScreen"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".DisplayRoundWinnerScreen"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
