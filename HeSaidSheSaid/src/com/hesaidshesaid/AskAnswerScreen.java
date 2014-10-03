@@ -87,6 +87,8 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 		if(v.getId() == R.id.buttonScoreBoardAskAnswer)
 		{
 			//do something
+			Intent intent = new Intent(this, ScoreBoardScreen.class);
+			startActivity(intent);
 		}
 		
 		if(v.getId() == R.id.buttonReadQuestionAskAnswer)
