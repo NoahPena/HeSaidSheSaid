@@ -98,5 +98,6 @@ public class ChooseAnswerScreen extends Activity implements OnItemClickListener 
 	        
 	        Intent intent = new Intent(this, DisplayRoundWinnerScreen.class);
 	        startActivity(intent);
+	        finish();
 	}
 }

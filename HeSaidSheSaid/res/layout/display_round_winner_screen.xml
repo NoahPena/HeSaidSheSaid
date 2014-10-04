@@ -10,7 +10,7 @@
         android:layout_weight="0.95" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewRoundWinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -20,17 +20,17 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonNextRound"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button1"
-            android:layout_alignBottom="@+id/button1"
+            android:layout_alignBaseline="@+id/buttonQuitRoundWinner"
+            android:layout_alignBottom="@+id/buttonQuitRoundWinner"
             android:layout_alignParentRight="true"
             android:layout_marginRight="29dp"
             android:text="@string/next_round" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonQuitRoundWinner"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -43,7 +43,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/textViewRoundWinner"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:text="@string/win_round"

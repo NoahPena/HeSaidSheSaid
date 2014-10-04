@@ -44,12 +44,14 @@ public class DisplayQuestionScreen extends Activity implements OnClickListener {
 		{
 			Intent intent = new Intent(this, AskAnswerScreen.class);
 			startActivity(intent);
+			finish();
 		}
 		
 		if(v.getId() == R.id.buttonQuitDisplayQuestion)
 		{
 			Intent intent = new Intent(this, TitleScreen.class);
 			startActivity(intent);
+			finish();
 		}
 	}
 

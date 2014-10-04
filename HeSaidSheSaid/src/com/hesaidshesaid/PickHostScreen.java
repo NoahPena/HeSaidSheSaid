@@ -55,12 +55,14 @@ public class PickHostScreen extends Activity implements OnClickListener {
 			{
 				Intent intent = new Intent(this, AskQuestionScreen.class);
 				startActivity(intent);
+				finish();
 			} else {
 				//choose question
 				chooseQuestion();
 				
 				Intent intent = new Intent(this, DisplayQuestionScreen.class);
 				startActivity(intent);
+				finish();
 			}
 		}
 	}

@@ -66,6 +66,7 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 				{
 					Intent intent = new Intent(this, ChooseAnswerScreen.class);
 					startActivity(intent);
+					finish();
 				} else {
 			
 				Random random = new Random();
@@ -79,6 +80,7 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 			} else {
 				Intent intent = new Intent(this, ChooseAnswerScreen.class);
 				startActivity(intent);
+				finish();
 			}
 		}
 		
@@ -86,6 +88,7 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 		{
 			Intent intent = new Intent(this, TitleScreen.class);
 			startActivity(intent);
+			finish();
 		}
 		
 		if(v.getId() == R.id.buttonScoreBoardAskAnswer)
@@ -93,12 +96,14 @@ public class AskAnswerScreen extends Activity implements OnClickListener {
 			//do something
 			Intent intent = new Intent(this, ScoreBoardScreen.class);
 			startActivity(intent);
+			finish();
 		}
 		
 		if(v.getId() == R.id.buttonReadQuestionAskAnswer)
 		{
 			Intent intent = new Intent(this, DisplayQuestionScreen.class);
 			startActivity(intent);
+			finish();
 		}
 	}
 

@@ -70,6 +70,7 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 		{
 			Intent intent = new Intent(this, AskAnswerScreen.class);
 			startActivity(intent);
+			finish();
 		}
 	}
 	

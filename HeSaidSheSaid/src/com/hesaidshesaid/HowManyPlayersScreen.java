@@ -61,12 +61,14 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 			
 			Intent intent = new Intent(this, EnterPlayerNamesScreen.class);
 			startActivity(intent);
+			finish();
 		}
 		
 		if(v.getId() == R.id.buttonBackHowManyPlayers)
 		{
 			Intent intent = new Intent(this, TitleScreen.class);
 			startActivity(intent);
+			finish();
 		}
 	}
 	

@@ -158,6 +158,7 @@ public class SettingsScreen extends Activity implements OnClickListener {
 			
 			Intent intent = new Intent(this, TitleScreen.class);
 			startActivity(intent);
+			finish();
 		}
 	}
 

@@ -52,6 +52,7 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 		{
 			Intent intent = new Intent(this, HowManyPlayersScreen.class);
 			startActivity(intent);
+			finish();
 		}
 		
 		if(v.getId() == R.id.buttonOkEnterPlayerNames)
@@ -64,7 +65,7 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 			
 			Intent intent = new Intent(this, PickHostScreen.class);
 			startActivity(intent);
-	
+			finish();
 			
 		}
 		
