@@ -68,9 +68,15 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		if(v.getId() == R.id.buttonOKScoreBoard)
 		{
-			Intent intent = new Intent(this, AskAnswerScreen.class);
-			startActivity(intent);
-			finish();
+			if(GlobalVariables.gameOver == true)
+			{
+				finish();
+			} else {
+				Intent intent = new Intent(this, AskAnswerScreen.class);
+				startActivity(intent);
+				finish();
+			}
+			
 		}
 	}
 	

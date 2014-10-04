@@ -27,6 +27,7 @@ public class TitleScreen extends Activity implements OnClickListener
 		settingsButton = (Button)findViewById(R.id.settingsButton);
 		quitButton = (Button)findViewById(R.id.quitButton);
 		
+		GlobalVariables.gameOver = false;
 		
 		playButton.setOnClickListener(this);
 		settingsButton.setOnClickListener(this);

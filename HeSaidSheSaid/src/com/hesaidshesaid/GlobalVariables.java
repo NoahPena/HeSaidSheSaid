@@ -37,5 +37,9 @@ public class GlobalVariables {
 	
 	public static Player currentWinner;
 	
+	public static ArrayList<Player> winningPlayers = new ArrayList<Player>();
+	
+	public static boolean gameOver = false;
+	
 
 }

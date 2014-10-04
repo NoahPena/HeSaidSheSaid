@@ -39,6 +39,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".DisplayRoundWinnerScreen"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".WinningScreen"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

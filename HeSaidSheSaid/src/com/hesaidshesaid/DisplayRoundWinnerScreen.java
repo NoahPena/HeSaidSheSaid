@@ -55,18 +55,48 @@ public class DisplayRoundWinnerScreen extends Activity implements OnClickListene
 			if(GlobalVariables.gameType == 0 && (GlobalVariables.currentRound == GlobalVariables.maxRounds))
 			{
 				//End game
-			}
-			
-			if(GlobalVariables.gameType == 1 && (GlobalVariables.currentWinner.getPlayerScore() == GlobalVariables.maxPoints))
+				int maxPoints = 0;
+				
+				for(int i = 0; i < GlobalVariables.players.size(); i++)
+				{
+					if(GlobalVariables.players.get(i).getPlayerScore() > maxPoints)
+					{
+						maxPoints = GlobalVariables.players.get(i).getPlayerScore();
+					}
+				}
+				
+				for(int i = 0; i < GlobalVariables.players.size(); i++)
+				{
+					if(GlobalVariables.players.get(i).getPlayerScore() == maxPoints)
+					{
+						GlobalVariables.winningPlayers.add(GlobalVariables.players.get(i));
+					}
+				}
+				
+				Intent intent = new Intent(this, WinningScreen.class);
+				startActivity(intent);
+				finish();
+			} else if(GlobalVariables.gameType == 1 && (GlobalVariables.currentWinner.getPlayerScore() == GlobalVariables.maxPoints))
 			{
 				//End game
-			}
+				for(int i = 0; i < GlobalVariables.players.size(); i++)
+				{
+					if(GlobalVariables.players.get(i).getPlayerScore() == GlobalVariables.maxPoints)
+					{
+						GlobalVariables.winningPlayers.add(GlobalVariables.players.get(i));
+					}
+				}
+				
+				Intent intent = new Intent(this, WinningScreen.class);
+				startActivity(intent);
+				finish();
+			} else {
 			
 			Intent intent = new Intent(this, PickHostScreen.class);
 			startActivity(intent);
 			finish();
-				
-		}
+			}
+		} 
 		
 		if(v.getId() == R.id.buttonQuitRoundWinner)
 		{
