@@ -57,6 +57,11 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		if(v.getId() == R.id.buttonOKHowManyPlayers)
 		{
+			GlobalVariables.amountOfPlayers = 0;
+			GlobalVariables.players.clear();
+			GlobalVariables.playersAnswering.clear();
+			GlobalVariables.host = null;
+			
 			GlobalVariables.amountOfPlayers = 2 + howManyPlayersSpinner.getSelectedItemPosition();
 			
 			Intent intent = new Intent(this, EnterPlayerNamesScreen.class);

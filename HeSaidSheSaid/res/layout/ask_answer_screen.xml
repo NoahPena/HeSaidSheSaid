@@ -52,8 +52,8 @@
             android:id="@+id/buttonOKAskAnswer"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/textViewPlayerNameAskAnswer"
             android:layout_below="@+id/editTextAskAnswer"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:text="@string/ok" />
 

@@ -24,6 +24,7 @@
         <activity android:name=".HowManyPlayersScreen"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".EnterPlayerNamesScreen"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".PickHostScreen"
             android:screenOrientation="portrait"></activity>

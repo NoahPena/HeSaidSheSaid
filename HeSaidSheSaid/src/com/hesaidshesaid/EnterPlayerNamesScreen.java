@@ -16,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class EnterPlayerNamesScreen extends Activity implements OnClickListener {
 	
@@ -38,6 +39,8 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
         playerNamesListView.setAdapter(playerNameAdapter);
         
         okEnterPlayerNamesButton = (Button)findViewById(R.id.buttonOkEnterPlayerNames);
+        	okEnterPlayerNamesButton.setFocusable(true);
+        	okEnterPlayerNamesButton.setFocusableInTouchMode(true);///add this line
         backEnterPlayerNamesButton = (Button)findViewById(R.id.buttonBackEnterPlayerNames);
         
         okEnterPlayerNamesButton.setOnClickListener(this);
@@ -57,6 +60,7 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 		
 		if(v.getId() == R.id.buttonOkEnterPlayerNames)
 		{
+			okEnterPlayerNamesButton.requestFocus();
 			for(int i = 0; i < GlobalVariables.amountOfPlayers; i++)
 			{
 				GlobalVariables.players.add(new Player(playerNameAdapter.getItem(i)));
