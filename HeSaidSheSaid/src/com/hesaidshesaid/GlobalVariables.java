@@ -2,6 +2,8 @@ package com.hesaidshesaid;
 
 import java.util.ArrayList;
 
+import android.content.SharedPreferences;
+
 public class GlobalVariables {
 	
 	//0 = Max Rounds
@@ -41,5 +43,6 @@ public class GlobalVariables {
 	
 	public static boolean gameOver = false;
 	
-
+	public static SharedPreferences settings;
+	public static SharedPreferences.Editor editor = settings.edit();
 }

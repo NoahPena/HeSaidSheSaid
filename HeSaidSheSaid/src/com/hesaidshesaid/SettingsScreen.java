@@ -2,6 +2,7 @@ package com.hesaidshesaid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,6 +37,8 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.settings_screen);
 		
+		SharedPreferences settings = getSharedPreferences("UserInfo", 0);
+		
 		victoryRadioGroup = (RadioGroup)findViewById(R.id.victoryRadioGroup);
 		maxRoundsRadio = (RadioButton)findViewById(R.id.radioMaxRounds);
 		maxPointsRadio = (RadioButton)findViewById(R.id.radioMaxPoints);
@@ -50,7 +53,19 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		maxPointsEdit = (EditText)findViewById(R.id.editTextMaxPoints);
 		
 		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);		
-		
+	
+		/*
+		if(settings.getString("GAMETYPE", "ROUNDS").toString() != null)
+		{
+			
+		} else if(settings.getString("GAMETYPE", "POINTS").toString() != null)
+		{
+			
+		} else if(settings.getString("GAMETYPE", "ENDLESS").toString() != null)
+		{
+			
+		}
+		*/
 		
 			maxPointsEdit.setHint("Default is 15");
 			maxRoundsEdit.setHint("Default is 20");

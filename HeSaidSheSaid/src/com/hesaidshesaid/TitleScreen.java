@@ -23,6 +23,8 @@ public class TitleScreen extends Activity implements OnClickListener
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.title_screen);
 		
+		GlobalVariables.settings = getSharedPreferences("UserInfo", 0);
+		
 		playButton = (Button)findViewById(R.id.playButton);
 		settingsButton = (Button)findViewById(R.id.settingsButton);
 		quitButton = (Button)findViewById(R.id.quitButton);
