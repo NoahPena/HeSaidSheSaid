@@ -28,6 +28,8 @@ public class SettingsScreen extends Activity implements OnClickListener {
 	
 	Button okSettingsButton;
 	
+	int numbers[];
+	
 	public void onCreate(Bundle savedInstance)
 	{
 		super.onCreate(savedInstance);
@@ -47,7 +49,8 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		maxRoundsEdit = (EditText)findViewById(R.id.editTextMaxRounds);
 		maxPointsEdit = (EditText)findViewById(R.id.editTextMaxPoints);
 		
-		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);
+		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);		
+		
 		
 			maxPointsEdit.setHint("Default is 15");
 			maxRoundsEdit.setHint("Default is 20");

@@ -36,6 +36,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
             android:text="Large Text"
+            android:gravity="center_horizontal"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button

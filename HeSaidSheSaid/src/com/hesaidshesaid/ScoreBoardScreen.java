@@ -36,7 +36,7 @@ public class ScoreBoardScreen extends Activity implements OnClickListener {
 		
 		Collections.sort(GlobalVariables.players, new Comparator<Player>() {
 			@Override public int compare(Player p1, Player p2) {
-	            return p1.getPlayerScore() - p2.getPlayerScore(); // Ascending
+	            return p2.getPlayerScore() - p1.getPlayerScore(); // Ascending
 			}
 		});
 		
