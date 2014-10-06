@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class SettingsScreen extends Activity implements OnClickListener {
 	
@@ -53,30 +54,110 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		maxPointsEdit = (EditText)findViewById(R.id.editTextMaxPoints);
 		
 		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);		
-	
-		/*
-		if(settings.getString("GAMETYPE", "ROUNDS").toString() != null)
+		
+		
+		if(settings.contains("GAMETYPE"))
 		{
-			
-		} else if(settings.getString("GAMETYPE", "POINTS").toString() != null)
-		{
-			
-		} else if(settings.getString("GAMETYPE", "ENDLESS").toString() != null)
-		{
-			
+			if(settings.getString("GAMETYPE", null).toString().equalsIgnoreCase("ZERO"))
+			{
+				//Toast.makeText(getApplicationContext(), settings.getString("GAMETYPE", null), Toast.LENGTH_LONG).show();
+				GlobalVariables.gameType = 0;
+				GlobalVariables.maxRounds = settings.getInt("ROUNDS", 20);
+				
+				maxRoundsEdit.setText(String.valueOf(GlobalVariables.maxRounds));
+				maxPointsEdit.setHint("Default is 15");
+				
+				maxPointsEdit.setFocusable(false);
+	            maxPointsEdit.setFocusableInTouchMode(false);
+	            maxPointsEdit.setClickable(false);
+	     
+	            maxRoundsEdit.setFocusable(true);
+	            maxRoundsEdit.setFocusableInTouchMode(true);
+	            maxRoundsEdit.setClickable(true);
+	            
+	            victoryRadioGroup.check(R.id.radioMaxRounds);
+	            
+			} else if(settings.getString("GAMETYPE", null).toString().equalsIgnoreCase("ONE"))
+			{
+				//Toast.makeText(getApplicationContext(), settings.getString("GAMETYPE", null), Toast.LENGTH_LONG).show();
+				GlobalVariables.gameType = 1;
+				GlobalVariables.maxPoints = settings.getInt("ROUNDS", 15);
+				
+				maxPointsEdit.setText(String.valueOf(GlobalVariables.maxPoints));
+				maxRoundsEdit.setHint("Default is 20");
+				
+				maxPointsEdit.setFocusable(true);
+	            maxPointsEdit.setFocusableInTouchMode(true);
+	            maxPointsEdit.setClickable(true);
+	     
+	            maxRoundsEdit.setFocusable(false);
+	            maxRoundsEdit.setFocusableInTouchMode(false);
+	            maxRoundsEdit.setClickable(false);
+	            
+	            victoryRadioGroup.check(R.id.radioMaxPoints);
+	            
+			} else if(settings.getString("GAMETYPE", null).toString().equalsIgnoreCase("TWO"))
+			{
+				//Toast.makeText(getApplicationContext(), settings.getString("GAMETYPE", null), Toast.LENGTH_LONG).show();
+				GlobalVariables.gameType = 2;
+				
+				maxPointsEdit.setHint("Default is 15");
+				maxRoundsEdit.setHint("Default is 20");
+				
+				maxPointsEdit.setFocusable(false);
+	            maxPointsEdit.setFocusableInTouchMode(false);
+	            maxPointsEdit.setClickable(false);
+	     
+	            maxRoundsEdit.setFocusable(false);
+	            maxRoundsEdit.setFocusableInTouchMode(false);
+	            maxRoundsEdit.setClickable(false);
+	            
+	            victoryRadioGroup.check(R.id.radioEndless);
+	            
+			} else {
+				maxPointsEdit.setHint("Default is 15");
+				maxRoundsEdit.setHint("Default is 20");
+				
+				maxPointsEdit.setFocusable(false);
+	            maxPointsEdit.setFocusableInTouchMode(false);
+	            maxPointsEdit.setClickable(false);
+	     
+	            maxRoundsEdit.setFocusable(true);
+	            maxRoundsEdit.setFocusableInTouchMode(true);
+	            maxRoundsEdit.setClickable(true);
+	            
+	            victoryRadioGroup.check(R.id.radioMaxRounds);
+			}
 		}
-		*/
 		
-			maxPointsEdit.setHint("Default is 15");
-			maxRoundsEdit.setHint("Default is 20");
+		if(settings.contains("CARDTYPE"))
+		{
+			if(settings.getString("CARDTYPE", null).toString().equalsIgnoreCase("ZERO"))
+			{
+				//Toast.makeText(getApplicationContext(), settings.getString("CARDTYPE", null), Toast.LENGTH_LONG).show();
+				GlobalVariables.cardType = 0;
+				
+				cardsRadioGroup.check(R.id.radioUseDefault);
+			} else if(settings.getString("CARDTYPE", null).toString().equalsIgnoreCase("ONE"))
+			{
+				//Toast.makeText(getApplicationContext(), settings.getString("CARDTYPE", null), Toast.LENGTH_LONG).show();
+				GlobalVariables.cardType = 1;
+				
+				cardsRadioGroup.check(R.id.radioOnlyCustom);
+			} else if(settings.getString("CARDTYPE", null).toString().equalsIgnoreCase("TWO"))
+			{
+				//Toast.makeText(getApplicationContext(), settings.getString("CARDTYPE", null), Toast.LENGTH_LONG).show();
+				GlobalVariables.cardType = 2;
+				
+				cardsRadioGroup.check(R.id.radioPlayerInLead);
+			} else {
+				cardsRadioGroup.check(R.id.radioUseDefault);
+			}
+		}
 		
-            maxPointsEdit.setFocusable(false);
-            maxPointsEdit.setFocusableInTouchMode(false);
-            maxPointsEdit.setClickable(false);
-     
-            maxRoundsEdit.setFocusable(true);
-            maxRoundsEdit.setFocusableInTouchMode(true);
-            maxRoundsEdit.setClickable(true);
+			
+		
+            
             
 		maxRoundsRadio.setOnClickListener(this);
 		maxPointsRadio.setOnClickListener(this);
@@ -126,11 +207,15 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		if(v.getId() == R.id.buttonOKSettings)
 		{
 			//Update Global Variables
+			SharedPreferences settings = getSharedPreferences("UserInfo", 0);
+			SharedPreferences.Editor editor = settings.edit();
 			
 			switch(victoryRadioGroup.getCheckedRadioButtonId())
 			{
 			case R.id.radioMaxRounds:
 				GlobalVariables.gameType = 0;
+				editor.putString("GAMETYPE", "ZERO");
+				
 				
 				try
 				{
@@ -139,10 +224,12 @@ public class SettingsScreen extends Activity implements OnClickListener {
 				{
 					GlobalVariables.maxRounds = 20;
 				}
+				editor.putInt("ROUNDS", GlobalVariables.maxRounds);
 				break;
 				
 			case R.id.radioMaxPoints:
 				GlobalVariables.gameType = 1;
+				editor.putString("GAMETYPE", "ONE");
 				
 				try
 				{
@@ -151,10 +238,12 @@ public class SettingsScreen extends Activity implements OnClickListener {
 				{
 					GlobalVariables.maxPoints = 15;
 				}
+				editor.putInt("ROUNDS", GlobalVariables.maxPoints);
 				break;
 				
 			case R.id.radioEndless:
 				GlobalVariables.gameType = 2;
+				editor.putString("GAMETYPE", "TWO");
 				break;
 			}
 			
@@ -162,17 +251,21 @@ public class SettingsScreen extends Activity implements OnClickListener {
 			{
 			case R.id.radioUseDefault:
 				GlobalVariables.cardType = 0;
+				editor.putString("CARDTYPE", "ZERO");
 				break;
 				
 			case R.id.radioOnlyCustom:
 				GlobalVariables.cardType = 1;
+				editor.putString("CARDTYPE", "ONE");
 				break;
 				
 			case R.id.radioPlayerInLead:
 				GlobalVariables.cardType = 2;
+				editor.putString("CARDTYPE", "TWO");
 				break;
 			}
 			
+			editor.commit();
 			
 			Intent intent = new Intent(this, TitleScreen.class);
 			startActivity(intent);

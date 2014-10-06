@@ -2,12 +2,12 @@ package com.hesaidshesaid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class TitleScreen extends Activity implements OnClickListener
 {
@@ -23,7 +23,11 @@ public class TitleScreen extends Activity implements OnClickListener
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.title_screen);
 		
-		GlobalVariables.settings = getSharedPreferences("UserInfo", 0);
+		//SharedPreferences settings = getSharedPreferences("UserInfo", 0);
+		//SharedPreferences.Editor editor = settings.edit();
+		
+		//editor.putString("GAMETYPE", "ROUNDS");
+		//editor.commit();
 		
 		playButton = (Button)findViewById(R.id.playButton);
 		settingsButton = (Button)findViewById(R.id.settingsButton);
