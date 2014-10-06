@@ -4,29 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/textViewRoundWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="39dp"
+        android:text="@string/choose"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/textViewQuestionRepeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/textViewRoundWinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="39dp"
-            android:text="@string/choose"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ListView
             android:id="@+id/listViewChooseAnswers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewRoundWinner"
             android:layout_centerHorizontal="true" >
-
         </ListView>
-
     </RelativeLayout>
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.hesaidshesaid;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,10 +15,13 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ChooseAnswerScreen extends Activity implements OnItemClickListener {
 	
 	ListView listViewChooseAnswer;
+	
+	TextView textViewQuestionRepeat;
 
 	public void onCreate(Bundle instanceBundle)
 	{
@@ -26,6 +30,10 @@ public class ChooseAnswerScreen extends Activity implements OnItemClickListener 
 		setContentView(R.layout.choose_answer_screen);
 		
 		listViewChooseAnswer = (ListView)findViewById(R.id.listViewChooseAnswers);
+		
+		textViewQuestionRepeat = (TextView)findViewById(R.id.textViewQuestionRepeat);
+		
+		textViewQuestionRepeat.setText("\n\n" + GlobalVariables.currentQuestion);
 		
 		for(int i = 0; i < GlobalVariables.players.size(); i++)
 		{
@@ -36,6 +44,8 @@ public class ChooseAnswerScreen extends Activity implements OnItemClickListener 
 		}
 		
 		String[] array = new String[GlobalVariables.playersAnswering.size()];
+		
+		Collections.shuffle(GlobalVariables.playersAnswering);
 		
 		for(int i = 0; i < array.length; i++)
 		{
@@ -95,6 +105,8 @@ public class ChooseAnswerScreen extends Activity implements OnItemClickListener 
 	        		break;
 	        	}
 	        }
+	        
+	        GlobalVariables.currentQuestionBank.remove(GlobalVariables.currentQuestion);
 	        
 	        Intent intent = new Intent(this, DisplayRoundWinnerScreen.class);
 	        startActivity(intent);

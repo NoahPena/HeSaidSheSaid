@@ -51,18 +51,43 @@ public class PickHostScreen extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		if(v.getId() == R.id.buttonOKPickHost)
 		{
-			if(GlobalVariables.cardType != 0)
+			if(GlobalVariables.cardType == 1)
 			{
 				Intent intent = new Intent(this, AskQuestionScreen.class);
 				startActivity(intent);
 				finish();
-			} else {
+			} else if(GlobalVariables.cardType == 0) {
 				//choose question
 				chooseQuestion();
 				
 				Intent intent = new Intent(this, DisplayQuestionScreen.class);
 				startActivity(intent);
 				finish();
+			} else {
+				int maxPoints = GlobalVariables.host.getPlayerScore();
+				boolean cool = true;
+				
+				for(int i = 0; i < GlobalVariables.playersAnswering.size(); i++)
+				{
+					if(maxPoints < GlobalVariables.playersAnswering.get(i).getPlayerScore())
+					{
+						cool = false;
+						break;
+					}
+				}
+				
+				if(cool)
+				{
+					Intent intent = new Intent(this, AskQuestionScreen.class);
+					startActivity(intent);
+					finish();
+				} else {
+					chooseQuestion();
+					
+					Intent intent = new Intent(this, DisplayQuestionScreen.class);
+					startActivity(intent);
+					finish();
+				}
 			}
 		}
 	}
@@ -71,7 +96,12 @@ public class PickHostScreen extends Activity implements OnClickListener {
 	{
 		Random random = new Random();
 		
-		GlobalVariables.currentQuestion = GlobalVariables.questionBank.get(random.nextInt(GlobalVariables.questionBank.size()));
+		if(GlobalVariables.currentQuestionBank.size() == 0)
+		{
+			GlobalVariables.currentQuestionBank = GlobalVariables.questionBank;
+		}
+		
+		GlobalVariables.currentQuestion = GlobalVariables.currentQuestionBank.get(random.nextInt(GlobalVariables.currentQuestionBank.size()));
 	}
 
 }

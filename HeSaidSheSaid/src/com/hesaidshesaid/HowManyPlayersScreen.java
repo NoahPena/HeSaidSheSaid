@@ -37,6 +37,8 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 		okHowManyPlayersButton.setOnClickListener(this);
 		backHowManyPlayersButton.setOnClickListener(this);
 		
+		GlobalVariables.currentQuestionBank.clear();
+		
 		//populate questionBank
 		if(GlobalVariables.cardType != 1)
 		{
@@ -86,6 +88,7 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 		while ((line = reader.readLine()) != null) 
 		{
 			GlobalVariables.questionBank.add(line);
+			GlobalVariables.currentQuestionBank.add(line);
 		}
 		
 		reader.close();
