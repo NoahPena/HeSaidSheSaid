@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 public class AskQuestionScreen extends Activity implements OnClickListener {
 	
@@ -15,6 +16,8 @@ public class AskQuestionScreen extends Activity implements OnClickListener {
 	Button buttonQuitWhatQuestion;
 	
 	EditText editTextQuestion;
+	
+	RelativeLayout relativeLayoutAskQuestion;
 	
 	public void onCreate(Bundle bundleInstance)
 	{
@@ -27,6 +30,8 @@ public class AskQuestionScreen extends Activity implements OnClickListener {
 		
 		editTextQuestion = (EditText)findViewById(R.id.editTextQuestion);
 		
+		relativeLayoutAskQuestion = (RelativeLayout)findViewById(R.id.relativeLayoutAskQuestion);
+		
 		buttonOKWhatQuestion.setOnClickListener(this);
 		buttonQuitWhatQuestion.setOnClickListener(this);
 	}
@@ -34,6 +39,10 @@ public class AskQuestionScreen extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		if(v.getId() == R.id.relativeLayoutAskQuestion)
+		{
+			editTextQuestion.clearFocus();
+		}
 		
 		if(v.getId() == R.id.buttonOKWhatQuestion)
 		{
