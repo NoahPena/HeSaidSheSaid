@@ -64,7 +64,7 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 			GlobalVariables.playersAnswering.clear();
 			GlobalVariables.host = null;
 			
-			GlobalVariables.amountOfPlayers = 2 + howManyPlayersSpinner.getSelectedItemPosition();
+			GlobalVariables.amountOfPlayers = 3 + howManyPlayersSpinner.getSelectedItemPosition();
 			
 			Intent intent = new Intent(this, EnterPlayerNamesScreen.class);
 			startActivity(intent);

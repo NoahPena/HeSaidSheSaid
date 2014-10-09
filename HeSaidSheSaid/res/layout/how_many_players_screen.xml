@@ -31,7 +31,7 @@
         <Button
             android:id="@+id/buttonBackHowManyPlayers"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignBaseline="@+id/buttonOKHowManyPlayers"
             android:layout_alignBottom="@+id/buttonOKHowManyPlayers"
             android:layout_toLeftOf="@+id/buttonOKHowManyPlayers"
@@ -40,7 +40,7 @@
         <Button
             android:id="@+id/buttonOKHowManyPlayers"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/spinnerPlayerNumber"
             android:layout_marginBottom="82dp"

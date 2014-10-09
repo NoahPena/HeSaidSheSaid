@@ -32,7 +32,7 @@
         <Button
             android:id="@+id/buttonMainMenuWinningScreen"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/textView3"
             android:layout_marginBottom="49dp"
@@ -41,7 +41,7 @@
         <Button
             android:id="@+id/buttonScoreBoardWinningScreen"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignBaseline="@+id/buttonMainMenuWinningScreen"
             android:layout_alignBottom="@+id/buttonMainMenuWinningScreen"
             android:layout_alignLeft="@+id/textView3"

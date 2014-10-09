@@ -33,7 +33,7 @@
         <Button
             android:id="@+id/buttonOKWhatQuestion"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignRight="@+id/editTextQuestion"
             android:layout_below="@+id/editTextQuestion"
             android:layout_marginTop="76dp"
@@ -42,7 +42,7 @@
         <Button
             android:id="@+id/buttonQuitWhatQuestion"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignBottom="@+id/buttonOKWhatQuestion"
             android:layout_alignLeft="@+id/editTextQuestion"
             android:text="@string/quit" />

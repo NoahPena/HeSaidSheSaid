@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">HeSaidSheSaid</string>
+    <string name="app_name">What\'s The Worst That Can Happen?</string>
     
     <string name="he_said">He Said  </string>
     <string name="she_said">She Said</string>
@@ -24,7 +24,6 @@
     
     <string name="how_many_players">How Many Players?</string>
     <string-array name="player_number_arrays">
-        <item>2 Players</item>
         <item>3 Players</item>
         <item>4 Players</item>
         <item>5 Players</item>
@@ -41,7 +40,7 @@
         <item>16 Players</item>
     </string-array>
     <string name="back">Back</string>
-    <string name="enter_player_names">Enter Player Names:</string>
+    <string name="enter_player_names">Enter Player Names</string>
     
     <string name="cool_person">Noah</string>
     <string name="is_host">is host!</string>

@@ -42,7 +42,7 @@
         <Button
             android:id="@+id/buttonOkDisplayQuestion"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignRight="@+id/textViewQuestion"
             android:layout_below="@+id/textViewQuestion"
             android:layout_marginTop="26dp"
@@ -51,7 +51,7 @@
         <Button
             android:id="@+id/buttonQuitDisplayQuestion"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignBaseline="@+id/buttonOkDisplayQuestion"
             android:layout_alignBottom="@+id/buttonOkDisplayQuestion"
             android:layout_alignLeft="@+id/textViewQuestion"

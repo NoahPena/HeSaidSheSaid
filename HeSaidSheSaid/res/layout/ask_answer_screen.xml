@@ -42,7 +42,7 @@
         <Button
             android:id="@+id/buttonScoreBoardAskAnswer"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_alignBottom="@+id/buttonReadQuestionAskAnswer"
             android:layout_alignTop="@+id/buttonReadQuestionAskAnswer"
             android:layout_toRightOf="@+id/buttonOKAskAnswer"
@@ -51,7 +51,7 @@
         <Button
             android:id="@+id/buttonOKAskAnswer"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_below="@+id/editTextAskAnswer"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
@@ -60,7 +60,7 @@
         <Button
             android:id="@+id/buttonReadQuestionAskAnswer"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_below="@+id/buttonOKAskAnswer"
             android:layout_marginTop="30dp"
             android:layout_toLeftOf="@+id/buttonOKAskAnswer"
@@ -69,10 +69,10 @@
         <Button
             android:id="@+id/buttonQuitAskAnswer"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/buttonScoreBoardAskAnswer"
+            android:layout_height="50dp"
             android:layout_alignBottom="@+id/buttonScoreBoardAskAnswer"
-            android:layout_toLeftOf="@+id/buttonScoreBoardAskAnswer"
+            android:layout_alignTop="@+id/buttonReadQuestionAskAnswer"
+            android:layout_toRightOf="@+id/buttonReadQuestionAskAnswer"
             android:text="@string/quit" />
 
     </RelativeLayout>

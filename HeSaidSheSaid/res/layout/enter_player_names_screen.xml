@@ -8,6 +8,7 @@
         android:id="@+id/textViewPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/enter_player_names"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="24dp" />
@@ -30,7 +31,7 @@
         <Button
             android:id="@+id/buttonOkEnterPlayerNames"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignBaseline="@+id/buttonBackEnterPlayerNames"
             android:layout_alignBottom="@+id/buttonBackEnterPlayerNames"
             android:layout_alignParentRight="true"
@@ -40,7 +41,7 @@
         <Button
             android:id="@+id/buttonBackEnterPlayerNames"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="30dp"
