@@ -2,17 +2,17 @@ package com.hesaidshesaid;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class TitleScreen extends Activity implements OnClickListener
 {
 
-	Button playButton;
+	ImageButton playButton;
 	Button settingsButton;
 	Button quitButton;
 	
@@ -29,7 +29,7 @@ public class TitleScreen extends Activity implements OnClickListener
 		//editor.putString("GAMETYPE", "ROUNDS");
 		//editor.commit();
 		
-		playButton = (Button)findViewById(R.id.playButton);
+		playButton = (ImageButton)findViewById(R.id.playButton);
 		settingsButton = (Button)findViewById(R.id.settingsButton);
 		quitButton = (Button)findViewById(R.id.quitButton);
 		
