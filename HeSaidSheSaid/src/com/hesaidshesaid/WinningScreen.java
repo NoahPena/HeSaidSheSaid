@@ -27,6 +27,8 @@ public class WinningScreen extends Activity implements OnClickListener {
 		buttonScoreBoardWinning = (Button)findViewById(R.id.buttonScoreBoardWinningScreen);
 		buttonMainMenuWinning = (Button)findViewById(R.id.buttonMainMenuWinningScreen);
 		
+		GlobalVariables.gameOver = true;
+		
 		String winners = "";
 		
 		for(int i = 0; i < GlobalVariables.winningPlayers.size(); i++)

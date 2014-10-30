@@ -29,6 +29,7 @@ public class SettingsScreen extends Activity implements OnClickListener {
 	EditText maxPointsEdit;
 	
 	Button okSettingsButton;
+	Button buttonBackSettings;
 	
 	int numbers[];
 	
@@ -54,7 +55,7 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		maxPointsEdit = (EditText)findViewById(R.id.editTextMaxPoints);
 		
 		okSettingsButton = (Button)findViewById(R.id.buttonOKSettings);		
-		
+		buttonBackSettings = (Button)findViewById(R.id.buttonBackSettingsScreen);
 		
 		if(settings.contains("GAMETYPE"))
 		{
@@ -164,6 +165,7 @@ public class SettingsScreen extends Activity implements OnClickListener {
 		endlessRadio.setOnClickListener(this);
 		victoryRadioGroup.setOnClickListener(this);
 		okSettingsButton.setOnClickListener(this);
+		buttonBackSettings.setOnClickListener(this);
 		
 	}
 
@@ -202,6 +204,13 @@ public class SettingsScreen extends Activity implements OnClickListener {
             maxPointsEdit.setFocusable(false);
             maxPointsEdit.setFocusableInTouchMode(false);
             maxPointsEdit.setClickable(false);
+		}
+		
+		if(v.getId() == R.id.buttonBackSettingsScreen)
+		{
+			Intent intent = new Intent(this, EnterPlayerNamesScreen.class);
+			startActivity(intent);
+			finish();
 		}
 	
 		if(v.getId() == R.id.buttonOKSettings)
@@ -267,9 +276,16 @@ public class SettingsScreen extends Activity implements OnClickListener {
 			
 			editor.commit();
 			
-			Intent intent = new Intent(this, TitleScreen.class);
-			startActivity(intent);
-			finish();
+			if(GlobalVariables.cardType > 1)
+			{
+				Intent intent = new Intent(this, AskQuestionScreen.class);
+				startActivity(intent);
+				finish();
+			} else {		
+				Intent intent = new Intent(this, PickHostScreen.class);
+				startActivity(intent);
+				finish();
+			}
 		}
 	}
 

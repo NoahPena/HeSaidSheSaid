@@ -42,6 +42,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".WinningScreen"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".HowToPlayScreen"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

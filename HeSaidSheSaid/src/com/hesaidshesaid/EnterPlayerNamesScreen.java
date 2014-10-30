@@ -67,7 +67,7 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 				
 			}
 			
-			Intent intent = new Intent(this, PickHostScreen.class);
+			Intent intent = new Intent(this, SettingsScreen.class);
 			startActivity(intent);
 			finish();
 			

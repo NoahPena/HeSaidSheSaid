@@ -54,7 +54,7 @@ public class TitleScreen extends Activity implements OnClickListener
 		
 		if(v.getId() == R.id.settingsButton)
 		{
-			Intent intent = new Intent(this, SettingsScreen.class);
+			Intent intent = new Intent(this, HowToPlayScreen.class);
 			startActivity(intent);
 			finish();
 		}

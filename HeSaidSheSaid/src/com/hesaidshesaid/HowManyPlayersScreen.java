@@ -37,7 +37,16 @@ public class HowManyPlayersScreen extends Activity implements OnClickListener {
 		okHowManyPlayersButton.setOnClickListener(this);
 		backHowManyPlayersButton.setOnClickListener(this);
 		
+		//Literally clear everything
+		GlobalVariables.gameOver = false;
 		GlobalVariables.currentQuestionBank.clear();
+		GlobalVariables.currentWinner = null;
+		GlobalVariables.currentCounter = 0;
+		GlobalVariables.currentQuestion = "";
+		GlobalVariables.currentRound = 0;
+		GlobalVariables.players.clear();
+		GlobalVariables.playersAnswering.clear();
+		GlobalVariables.playersNotHost.clear();
 		
 		//populate questionBank
 		if(GlobalVariables.cardType != 1)

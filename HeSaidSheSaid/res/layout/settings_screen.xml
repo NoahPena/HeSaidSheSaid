@@ -24,8 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/textViewPlayer" >
+            android:layout_below="@+id/textViewPlayer"
+            android:layout_marginTop="5dp" >
 
             <RadioButton
                 android:id="@+id/radioMaxRounds"
@@ -46,15 +46,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/endless" />
         </RadioGroup>
-
-        <Button
-            android:id="@+id/buttonOKSettings"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
-            android:text="@string/ok" />
 
         <EditText
             android:id="@+id/editTextMaxRounds"
@@ -115,9 +106,26 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/cardsRadioGroup"
             android:layout_alignParentLeft="true"
-            android:text="@string/cards"
             android:layout_marginTop="50dp"
+            android:text="@string/cards"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonOKSettings"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_toRightOf="@+id/textViewPlayer"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/buttonBackSettingsScreen"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/cardsRadioGroup"
+            android:layout_toLeftOf="@+id/editTextMaxRounds"
+            android:text="@string/back" />
 
     </RelativeLayout>
 
