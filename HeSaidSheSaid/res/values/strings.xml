@@ -32,12 +32,6 @@
         <item>8 Players</item>
         <item>9 Players</item>
         <item>10 Players</item>
-        <item>11 Players</item>
-        <item>12 Players</item>
-        <item>13 Players</item>
-        <item>14 Players</item>
-        <item>15 Players</item>
-        <item>16 Players</item>
     </string-array>
     <string name="back">Back</string>
     <string name="enter_player_names">Enter Player Names</string>

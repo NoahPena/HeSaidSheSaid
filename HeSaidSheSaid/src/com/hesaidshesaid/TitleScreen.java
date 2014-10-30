@@ -13,8 +13,8 @@ public class TitleScreen extends Activity implements OnClickListener
 {
 
 	ImageButton playButton;
-	Button settingsButton;
-	Button quitButton;
+	ImageButton settingsButton;
+	ImageButton quitButton;
 	
 	
 	public void onCreate(Bundle savedInstance)
@@ -30,8 +30,8 @@ public class TitleScreen extends Activity implements OnClickListener
 		//editor.commit();
 		
 		playButton = (ImageButton)findViewById(R.id.playButton);
-		settingsButton = (Button)findViewById(R.id.settingsButton);
-		quitButton = (Button)findViewById(R.id.quitButton);
+		settingsButton = (ImageButton)findViewById(R.id.settingsButton);
+		quitButton = (ImageButton)findViewById(R.id.quitButton);
 		
 		GlobalVariables.gameOver = false;
 		
