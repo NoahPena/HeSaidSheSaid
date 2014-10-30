@@ -21,14 +21,15 @@
 
         <EditText
             android:id="@+id/editTextAskAnswer"
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="150dp"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:gravity="center"
             android:ems="10"
-            android:inputType="textMultiLine" />
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:background="@drawable/test" />
 
         <TextView
             android:id="@+id/textView2"
