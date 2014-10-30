@@ -61,11 +61,14 @@ public class EnterPlayerNamesScreen extends Activity implements OnClickListener 
 		if(v.getId() == R.id.buttonOkEnterPlayerNames)
 		{
 			okEnterPlayerNamesButton.requestFocus();
+			
 			for(int i = 0; i < GlobalVariables.amountOfPlayers; i++)
 			{
 				GlobalVariables.players.add(new Player(playerNameAdapter.getItem(i)));
 				
 			}
+			
+			
 			
 			Intent intent = new Intent(this, SettingsScreen.class);
 			startActivity(intent);
