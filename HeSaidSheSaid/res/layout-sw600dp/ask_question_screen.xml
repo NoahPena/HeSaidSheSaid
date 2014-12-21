@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutAskQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.97"
+        android:background="@drawable/background" >
+
+        <TextView
+            android:id="@+id/textViewPlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:text="@string/what_question"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editTextQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_below="@+id/textViewPlayerName"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="62dp"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/buttonOKWhatQuestion"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/editTextQuestion"
+            android:layout_below="@+id/editTextQuestion"
+            android:layout_marginTop="76dp"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/buttonQuitWhatQuestion"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/buttonOKWhatQuestion"
+            android:layout_alignLeft="@+id/editTextQuestion"
+            android:text="@string/quit" />
+    </RelativeLayout>
+
+</LinearLayout>

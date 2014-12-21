@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background" >
+
+        <TextView
+            android:id="@+id/textViewPlayerNameAskAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editTextAskAnswer"
+            android:layout_width="220dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:background="@drawable/test" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/editTextAskAnswer"
+            android:layout_below="@+id/textViewPlayerNameAskAnswer"
+            android:layout_marginTop="26dp"
+            android:text="@string/what_answer"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonScoreBoardAskAnswer"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/buttonReadQuestionAskAnswer"
+            android:layout_alignTop="@+id/buttonReadQuestionAskAnswer"
+            android:layout_toRightOf="@+id/buttonOKAskAnswer"
+            android:text="@string/score_board" />
+
+        <Button
+            android:id="@+id/buttonOKAskAnswer"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editTextAskAnswer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/buttonReadQuestionAskAnswer"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/buttonOKAskAnswer"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@+id/buttonOKAskAnswer"
+            android:text="@string/read_question" />
+
+        <Button
+            android:id="@+id/buttonQuitAskAnswer"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/buttonScoreBoardAskAnswer"
+            android:layout_alignTop="@+id/buttonReadQuestionAskAnswer"
+            android:layout_toRightOf="@+id/buttonReadQuestionAskAnswer"
+            android:text="@string/quit" />
+
+    </RelativeLayout>
+
+</LinearLayout>

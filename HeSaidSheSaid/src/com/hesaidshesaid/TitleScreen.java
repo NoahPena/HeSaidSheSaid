@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class TitleScreen extends Activity implements OnClickListener
 {
@@ -16,6 +17,9 @@ public class TitleScreen extends Activity implements OnClickListener
 	ImageButton settingsButton;
 	ImageButton quitButton;
 	
+	ImageView imageView;
+	
+	RelativeLayout relativeLayout;
 	
 	public void onCreate(Bundle savedInstance)
 	{
@@ -33,11 +37,20 @@ public class TitleScreen extends Activity implements OnClickListener
 		settingsButton = (ImageButton)findViewById(R.id.settingsButton);
 		quitButton = (ImageButton)findViewById(R.id.quitButton);
 		
+		imageView = (ImageView)findViewById(R.id.imageView1);
+		
+		relativeLayout = (RelativeLayout)findViewById(R.id.titleScreenRelativeLayout);
+		
 		GlobalVariables.gameOver = false;
 		
 		playButton.setOnClickListener(this);
 		settingsButton.setOnClickListener(this);
 		quitButton.setOnClickListener(this);
+		
+		//Scale.scaleContents(playButton, relativeLayout);
+		//Scale.scaleContents(settingsButton, relativeLayout);
+		//Scale.scaleContents(quitButton, relativeLayout);
+		//Scale.scaleContents(imageView, relativeLayout);
 	}
 
 

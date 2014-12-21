@@ -13,16 +13,16 @@
 
         <ImageButton
             android:id="@+id/playButton"
-            android:layout_width="225dp"
-            android:layout_height="75dp"
+            android:layout_width="450dp"
+            android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:background="@drawable/play_button" />
 
         <ImageButton
             android:id="@+id/quitButton"
-            android:layout_width="225dp"
-            android:layout_height="75dp"
+            android:layout_width="450dp"
+            android:layout_height="150dp"
             android:layout_alignLeft="@+id/playButton"
             android:layout_below="@+id/settingsButton"
             android:layout_marginTop="20dp"
@@ -30,8 +30,8 @@
 
         <ImageButton
             android:id="@+id/settingsButton"
-            android:layout_width="225dp"
-            android:layout_height="75dp"
+            android:layout_width="450dp"
+            android:layout_height="150dp"
             android:layout_alignLeft="@+id/quitButton"
             android:layout_below="@+id/playButton"
             android:layout_marginTop="20dp"
@@ -39,12 +39,12 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="300dp"
+            android:layout_width="600dp"
             android:layout_height="match_parent"
             android:layout_above="@+id/playButton"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/titlebubble" />
 
     </RelativeLayout>

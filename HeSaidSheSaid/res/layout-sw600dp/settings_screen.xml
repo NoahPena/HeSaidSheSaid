@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.95"
+        android:background="@drawable/background" >
+
+        <TextView
+            android:id="@+id/textViewPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="41dp"
+            android:text="@string/victory_conditions"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RadioGroup
+            android:id="@+id/victoryRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewPlayer"
+            android:layout_marginTop="5dp" >
+
+            <RadioButton
+                android:id="@+id/radioMaxRounds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/max_rounds" />
+
+            <RadioButton
+                android:id="@+id/radioMaxPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max_points" />
+
+            <RadioButton
+                android:id="@+id/radioEndless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/endless" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editTextMaxRounds"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/victoryRadioGroup"
+            android:layout_marginLeft="37dp"
+            android:layout_toRightOf="@+id/victoryRadioGroup"
+            android:ems="10"
+            android:hint="@string/max_rounds_hint"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextMaxPoints"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editTextMaxRounds"
+            android:layout_below="@+id/editTextMaxRounds"
+            android:ems="10"
+            android:hint="@string/max_points_hint"
+            android:inputType="number" />
+
+        <RadioGroup
+            android:id="@+id/cardsRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonOKSettings"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp" >
+
+            <RadioButton
+                android:id="@+id/radioUseDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/use_default" />
+
+            <RadioButton
+                android:id="@+id/radioOnlyCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/only_custom" />
+
+            <RadioButton
+                android:id="@+id/radioPlayerInLead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/player_in_lead" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/cardsRadioGroup"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="50dp"
+            android:text="@string/cards"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonOKSettings"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_toRightOf="@+id/textViewPlayer"
+            android:text="@string/ok" />
+
+        <Button
+            android:id="@+id/buttonBackSettingsScreen"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/cardsRadioGroup"
+            android:layout_toLeftOf="@+id/editTextMaxRounds"
+            android:text="@string/back" />
+
+    </RelativeLayout>
+
+</LinearLayout>
